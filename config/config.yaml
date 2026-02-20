@@ -1,0 +1,68 @@
+# PII Detection & Data Quality Validation Pipeline Configuration
+
+paths:
+  input_csv: "data/customers_raw.csv"
+  output_dir: "output"
+  logs_dir: "logs"
+
+logging:
+  level: "DEBUG"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/pipeline.log"
+  console_level: "INFO"
+
+validation:
+  # Allowed values for categorical columns
+  valid_account_statuses:
+    - "active"
+    - "inactive"
+    - "suspended"
+  
+  # Validation constraints
+  customer_id:
+    type: "int"
+    unique: true
+    positive: true
+  
+  names:
+    min_length: 2
+    max_length: 50
+    pattern: "^[a-zA-Z\\s\\-']*$"  # Allow letters, spaces, hyphens, apostrophes
+  
+  email:
+    pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+  
+  phone:
+    min_length: 10
+    max_length: 15  # After removing symbols
+  
+  dates:
+    formats:
+      - "%Y-%m-%d"
+      - "%m/%d/%Y"
+      - "%d/%m/%Y"
+  
+  income:
+    min_value: 0
+    max_value: 10000000  # $10M
+
+cleaning:
+  missing_value_strategy:
+    first_name: "unknown"
+    last_name: "unknown"
+    address: "unknown"
+    phone: "unknown"
+    email: "unknown"
+    date_of_birth: "drop_row"
+    income: "0"
+    account_status: "unknown"
+  
+  phone_format: "XXX-XXX-XXXX"
+  date_format: "%Y-%m-%d"
+
+masking:
+  name_pattern: "{first_char}*** {last_char}***"
+  email_pattern: "{first_char}***@{domain}"
+  phone_pattern: "***-***-{last_four}"
+  address_pattern: "[MASKED ADDRESS]"
+  dob_pattern: "{year}-**-**"
