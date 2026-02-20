@@ -153,10 +153,3 @@ Business data (income, account_status, customer_id) remains visible for analytic
 - pyyaml: Configuration management
 - pytest: Testing framework
 
-## Author
-
-Data Engineering Team
-
-## Version
-
-1.0.0
