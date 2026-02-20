@@ -1,0 +1,25 @@
+DATA CLEANING LOG
+=================
+
+Processed: 10 rows
+Rows dropped: 0
+Output rows: 10
+
+ACTIONS TAKEN:
+----------------------------------------
+
+Normalization:
+  - phone_format: 3 items affected
+  - date_format: 2 items affected
+  - name_case: 1 items affected
+  - income_numeric: 1 items affected
+  - email_lowercase: 1 items affected
+  - account_status: 1 items affected
+
+VALIDATION AFTER CLEANING:
+----------------------------------------
+(See validation_results.txt for details)
+
+Output: customers_cleaned.csv
+  - Rows: 10
+  - Columns: 10

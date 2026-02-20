@@ -1,0 +1,25 @@
+PIPELINE EXECUTION REPORT
+=========================
+Timestamp: 2026-02-20T11:40:20.527422
+
+[2026-02-20T11:40:20.535949] LOAD: [OK] SUCCESS (10 rows, 10 columns)
+[2026-02-20T11:40:20.570642] PROFILE: OK quality report generated
+[2026-02-20T11:40:20.574784] VALIDATE_RAW: OK (10 passed, 0 issues)
+[2026-02-20T11:40:20.608223] CLEAN: OK (10 rows)
+[2026-02-20T11:40:20.611753] VALIDATE_CLEAN: ISSUES (9 passed, 1 issues)
+[2026-02-20T11:40:20.619232] DETECT_PII: OK (10 emails, 10 phones)
+[2026-02-20T11:40:20.627056] MASK: OK (10 rows masked)
+[2026-02-20T11:40:20.643747] SAVE: OK (all outputs saved)
+
+DELIVERABLES CREATED:
+----------------------------------------
+[OK] data_quality_report.txt - Data profiling results
+[OK] validation_results.txt - Validation outcomes
+[OK] cleaning_log.txt - Cleaning actions applied
+[OK] pii_detection_report.txt - PII exposure analysis
+[OK] masked_sample.txt - Before/after comparison
+[OK] customers_cleaned.csv - Cleaned dataset
+[OK] customers_masked.csv - Masked dataset
+[OK] pipeline_execution_report.txt - This report
+
+STATUS: SUCCESS

@@ -1,0 +1,53 @@
+DATA QUALITY PROFILE REPORT
+===========================
+
+Generated: 2026-02-20T11:40:20.565742
+Total Rows: 10
+Total Columns: 10
+
+COMPLETENESS:
+----------------------------------------
+  [OK] customer_id: 100.0% (10/10)
+  [OK] first_name: 90.0% (9/10)
+  [OK] last_name: 90.0% (9/10)
+  [OK] email: 100.0% (10/10)
+  [OK] phone: 100.0% (10/10)
+  [OK] date_of_birth: 100.0% (10/10)
+  [OK] address: 80.0% (8/10)
+  [OK] income: 90.0% (9/10)
+  [OK] account_status: 90.0% (9/10)
+  [OK] created_date: 100.0% (10/10)
+
+DATA TYPES:
+----------------------------------------
+  [OK] customer_id: INT
+  [OK] first_name: STRING
+  [OK] last_name: STRING
+  [OK] email: STRING
+  [OK] phone: STRING
+  [FAIL] date_of_birth: STRING (should be DATE)
+  [OK] address: STRING
+  [FAIL] income: STRING (should be NUMERIC)
+  [OK] account_status: STRING
+  [FAIL] created_date: STRING (should be DATE)
+
+QUALITY ISSUES:
+----------------------------------------
+  Phone Format Issues (3):
+    - Row 4: '(555) 234-5678'
+    - Row 9: '555.789.0123'
+    - Row 10: '5557890123'
+  Date Format Issues (4):
+    - Row 5: 'date_of_birth: 1975/05/10'
+    - Row 6: 'created_date: 01/15/2024'
+    - Row 7: 'date_of_birth: invalid_date'
+    - Row 11: 'created_date: invalid_date'
+  Name Case Issues (1):
+    - Row 9: 'last_name: wilson'
+
+SEVERITY SUMMARY:
+----------------------------------------
+  Critical (blocks processing): 0
+  High (data incorrect): 4
+  Medium (needs cleaning): 4
+  Total Issues: 8

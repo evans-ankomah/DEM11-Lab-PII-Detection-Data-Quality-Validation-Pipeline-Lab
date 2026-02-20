@@ -1,0 +1,335 @@
+2026-02-20 11:36:22,292 - root - INFO - Logging configured: logs\pipeline.log
+2026-02-20 11:36:22,292 - __main__ - INFO - Starting PII Detection & Data Quality Validation Pipeline
+2026-02-20 11:36:22,298 - root - INFO - Configuration loaded from config/config.yaml
+2026-02-20 11:36:22,346 - src.pipeline - INFO - 
+
+
+2026-02-20 11:36:22,347 - src.pipeline - INFO - ============================================================
+2026-02-20 11:36:22,347 - src.pipeline - INFO - PII DETECTION & DATA QUALITY PIPELINE
+2026-02-20 11:36:22,347 - src.pipeline - INFO - ============================================================
+2026-02-20 11:36:22,347 - src.pipeline - INFO - Start Time: 2026-02-20T11:36:22.299529
+2026-02-20 11:36:22,348 - src.pipeline - INFO - ============================================================
+2026-02-20 11:36:22,348 - src.pipeline - INFO - ============================================================
+2026-02-20 11:36:22,348 - src.pipeline - INFO - STAGE 1: LOAD
+2026-02-20 11:36:22,349 - src.pipeline - INFO - ============================================================
+2026-02-20 11:36:22,354 - src.pipeline - INFO - Columns: ['customer_id', 'first_name', 'last_name', 'email', 'phone', 'date_of_birth', 'address', 'income', 'account_status', 'created_date']
+2026-02-20 11:36:22,354 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:36:22,354 - src.pipeline - INFO - STAGE 2: PROFILE
+2026-02-20 11:36:22,354 - src.pipeline - INFO - ============================================================
+2026-02-20 11:36:22,355 - src.profiler - INFO - Initialized DataProfiler with data/customers_raw.csv
+2026-02-20 11:36:22,355 - src.profiler - DEBUG - customer_id: 100.0% complete (10/10)
+2026-02-20 11:36:22,356 - src.profiler - DEBUG - first_name: 90.0% complete (9/10)
+2026-02-20 11:36:22,356 - src.profiler - DEBUG - last_name: 90.0% complete (9/10)
+2026-02-20 11:36:22,356 - src.profiler - DEBUG - email: 100.0% complete (10/10)
+2026-02-20 11:36:22,357 - src.profiler - DEBUG - phone: 100.0% complete (10/10)
+2026-02-20 11:36:22,357 - src.profiler - DEBUG - date_of_birth: 100.0% complete (10/10)
+2026-02-20 11:36:22,357 - src.profiler - DEBUG - address: 80.0% complete (8/10)
+2026-02-20 11:36:22,357 - src.profiler - DEBUG - income: 90.0% complete (9/10)
+2026-02-20 11:36:22,357 - src.profiler - DEBUG - account_status: 90.0% complete (9/10)
+2026-02-20 11:36:22,357 - src.profiler - DEBUG - created_date: 100.0% complete (10/10)
+2026-02-20 11:36:22,359 - src.profiler - DEBUG - customer_id: detected as INT
+2026-02-20 11:36:22,359 - src.profiler - DEBUG - first_name: detected as STRING
+2026-02-20 11:36:22,359 - src.profiler - DEBUG - last_name: detected as STRING
+2026-02-20 11:36:22,359 - src.profiler - DEBUG - email: detected as STRING
+2026-02-20 11:36:22,360 - src.profiler - DEBUG - phone: detected as STRING
+2026-02-20 11:36:22,360 - src.profiler - DEBUG - date_of_birth: detected as STRING (should be DATE)
+2026-02-20 11:36:22,360 - src.profiler - DEBUG - address: detected as STRING
+2026-02-20 11:36:22,360 - src.profiler - DEBUG - income: detected as STRING (should be NUMERIC)
+2026-02-20 11:36:22,360 - src.profiler - DEBUG - account_status: detected as STRING
+2026-02-20 11:36:22,360 - src.profiler - DEBUG - created_date: detected as STRING (should be DATE)
+2026-02-20 11:36:22,364 - src.profiler - INFO - Detected 3 phone format issues, 4 date format issues, 1 case issues
+2026-02-20 11:36:22,367 - src.profiler - WARNING - account_status: 6 duplicates found
+2026-02-20 11:36:22,368 - src.profiler - INFO - account_status: found {'active', 'suspended', 'inactive'}, invalid: 0
+2026-02-20 11:36:22,370 - src.profiler - INFO - Value ranges analyzed: {'customer_id': {'min': 1, 'max': 10, 'invalid': 0}, 'income': {'min': 55000.0, 'max': 120000.0, 'negative': 0, 'over_10m': 0}}
+2026-02-20 11:36:22,372 - src.profiler - INFO - Generated quality report with 8 issues
+2026-02-20 11:36:22,376 - src.pipeline - ERROR - Profiling failed: 'charmap' codec can't encode character '\u2713' in position 195: character maps to <undefined>
+2026-02-20 11:37:52,307 - root - INFO - Logging configured: logs\pipeline.log
+2026-02-20 11:37:52,307 - __main__ - INFO - Starting PII Detection & Data Quality Validation Pipeline
+2026-02-20 11:37:52,312 - root - INFO - Configuration loaded from config/config.yaml
+2026-02-20 11:37:52,321 - src.pipeline - INFO - 
+
+
+2026-02-20 11:37:52,321 - src.pipeline - INFO - ============================================================
+2026-02-20 11:37:52,323 - src.pipeline - INFO - PII DETECTION & DATA QUALITY PIPELINE
+2026-02-20 11:37:52,324 - src.pipeline - INFO - ============================================================
+2026-02-20 11:37:52,324 - src.pipeline - INFO - Start Time: 2026-02-20T11:37:52.314500
+2026-02-20 11:37:52,324 - src.pipeline - INFO - ============================================================
+2026-02-20 11:37:52,325 - src.pipeline - INFO - ============================================================
+2026-02-20 11:37:52,325 - src.pipeline - INFO - STAGE 1: LOAD
+2026-02-20 11:37:52,326 - src.pipeline - INFO - ============================================================
+2026-02-20 11:37:52,332 - src.pipeline - INFO - [2026-02-20T11:37:52.332027] LOAD: [OK] SUCCESS (10 rows, 10 columns)
+2026-02-20 11:37:52,333 - src.pipeline - INFO - Columns: ['customer_id', 'first_name', 'last_name', 'email', 'phone', 'date_of_birth', 'address', 'income', 'account_status', 'created_date']
+2026-02-20 11:37:52,333 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:37:52,333 - src.pipeline - INFO - STAGE 2: PROFILE
+2026-02-20 11:37:52,334 - src.pipeline - INFO - ============================================================
+2026-02-20 11:37:52,334 - src.profiler - INFO - Initialized DataProfiler with data/customers_raw.csv
+2026-02-20 11:37:52,335 - src.profiler - DEBUG - customer_id: 100.0% complete (10/10)
+2026-02-20 11:37:52,336 - src.profiler - DEBUG - first_name: 90.0% complete (9/10)
+2026-02-20 11:37:52,336 - src.profiler - DEBUG - last_name: 90.0% complete (9/10)
+2026-02-20 11:37:52,338 - src.profiler - DEBUG - email: 100.0% complete (10/10)
+2026-02-20 11:37:52,338 - src.profiler - DEBUG - phone: 100.0% complete (10/10)
+2026-02-20 11:37:52,338 - src.profiler - DEBUG - date_of_birth: 100.0% complete (10/10)
+2026-02-20 11:37:52,339 - src.profiler - DEBUG - address: 80.0% complete (8/10)
+2026-02-20 11:37:52,341 - src.profiler - DEBUG - income: 90.0% complete (9/10)
+2026-02-20 11:37:52,342 - src.profiler - DEBUG - account_status: 90.0% complete (9/10)
+2026-02-20 11:37:52,342 - src.profiler - DEBUG - created_date: 100.0% complete (10/10)
+2026-02-20 11:37:52,342 - src.profiler - DEBUG - customer_id: detected as INT
+2026-02-20 11:37:52,344 - src.profiler - DEBUG - first_name: detected as STRING
+2026-02-20 11:37:52,344 - src.profiler - DEBUG - last_name: detected as STRING
+2026-02-20 11:37:52,344 - src.profiler - DEBUG - email: detected as STRING
+2026-02-20 11:37:52,345 - src.profiler - DEBUG - phone: detected as STRING
+2026-02-20 11:37:52,345 - src.profiler - DEBUG - date_of_birth: detected as STRING (should be DATE)
+2026-02-20 11:37:52,345 - src.profiler - DEBUG - address: detected as STRING
+2026-02-20 11:37:52,348 - src.profiler - DEBUG - income: detected as STRING (should be NUMERIC)
+2026-02-20 11:37:52,350 - src.profiler - DEBUG - account_status: detected as STRING
+2026-02-20 11:37:52,352 - src.profiler - DEBUG - created_date: detected as STRING (should be DATE)
+2026-02-20 11:37:52,362 - src.profiler - INFO - Detected 3 phone format issues, 4 date format issues, 1 case issues
+2026-02-20 11:37:52,374 - src.profiler - WARNING - account_status: 6 duplicates found
+2026-02-20 11:37:52,376 - src.profiler - INFO - account_status: found {'inactive', 'active', 'suspended'}, invalid: 0
+2026-02-20 11:37:52,379 - src.profiler - INFO - Value ranges analyzed: {'customer_id': {'min': 1, 'max': 10, 'invalid': 0}, 'income': {'min': 55000.0, 'max': 120000.0, 'negative': 0, 'over_10m': 0}}
+2026-02-20 11:37:52,381 - src.profiler - INFO - Generated quality report with 8 issues
+2026-02-20 11:37:52,381 - src.profiler - INFO - Report saved to output\data_quality_report.txt
+2026-02-20 11:37:52,383 - src.pipeline - INFO - [2026-02-20T11:37:52.383315] PROFILE: OK quality report generated
+2026-02-20 11:37:52,383 - src.pipeline - INFO - DATA QUALITY PROFILE REPORT
+===========================
+
+Generated: 2026-02-20T11:37:52.379515
+Total Rows: 10
+Total Columns: 10
+
+COMPLETENESS:
+----------------------------------------
+  [OK] customer_id: 100.0% (10/10)
+  [OK] first_name: 90.0% (9/10)
+  [OK] last_name: 90.0% (9/10)
+  [OK] email: 100.0% (10/10)
+  [OK] phone: 100.0% (10/10)
+  [OK] date_of_birth: 100.0% (10/10)
+  [OK] address: 80.0% (8/10)
+  [OK] income: 90.0% (9/10)
+  [OK] account_status: 90.0% (9/10)
+  [OK] created_date: 100.0% (1...
+2026-02-20 11:37:52,383 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:37:52,384 - src.pipeline - INFO - STAGE 3: VALIDATE RAW
+2026-02-20 11:37:52,384 - src.pipeline - INFO - ============================================================
+2026-02-20 11:37:52,384 - src.pipeline - INFO - [2026-02-20T11:37:52.384577] VALIDATE_RAW: FAILED '<class 'pandera.api.checks.Check'>' object has no attribute 'unique'. Make sure any custom checks have been registered using the extensions api.
+2026-02-20 11:37:52,387 - src.pipeline - ERROR - Validation failed: '<class 'pandera.api.checks.Check'>' object has no attribute 'unique'. Make sure any custom checks have been registered using the extensions api.
+2026-02-20 11:39:59,491 - root - INFO - Logging configured: logs\pipeline.log
+2026-02-20 11:39:59,492 - __main__ - INFO - Starting PII Detection & Data Quality Validation Pipeline
+2026-02-20 11:39:59,498 - root - INFO - Configuration loaded from config/config.yaml
+2026-02-20 11:39:59,498 - src.pipeline - INFO - Initialized pipeline: data/customers_raw.csv -> output
+2026-02-20 11:39:59,499 - src.pipeline - INFO - 
+
+
+2026-02-20 11:39:59,501 - src.pipeline - INFO - ============================================================
+2026-02-20 11:39:59,502 - src.pipeline - INFO - PII DETECTION & DATA QUALITY PIPELINE
+2026-02-20 11:39:59,502 - src.pipeline - INFO - ============================================================
+2026-02-20 11:39:59,502 - src.pipeline - INFO - Start Time: 2026-02-20T11:39:59.498852
+2026-02-20 11:39:59,502 - src.pipeline - INFO - ============================================================
+2026-02-20 11:39:59,503 - src.pipeline - INFO - ============================================================
+2026-02-20 11:39:59,503 - src.pipeline - INFO - STAGE 1: LOAD
+2026-02-20 11:39:59,503 - src.pipeline - INFO - ============================================================
+2026-02-20 11:39:59,507 - src.pipeline - INFO - [2026-02-20T11:39:59.507244] LOAD: [OK] SUCCESS (10 rows, 10 columns)
+2026-02-20 11:39:59,508 - src.pipeline - INFO - Columns: ['customer_id', 'first_name', 'last_name', 'email', 'phone', 'date_of_birth', 'address', 'income', 'account_status', 'created_date']
+2026-02-20 11:39:59,508 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:39:59,508 - src.pipeline - INFO - STAGE 2: PROFILE
+2026-02-20 11:39:59,508 - src.pipeline - INFO - ============================================================
+2026-02-20 11:39:59,508 - src.profiler - INFO - Initialized DataProfiler with data/customers_raw.csv
+2026-02-20 11:39:59,510 - src.profiler - DEBUG - customer_id: 100.0% complete (10/10)
+2026-02-20 11:39:59,510 - src.profiler - DEBUG - first_name: 90.0% complete (9/10)
+2026-02-20 11:39:59,511 - src.profiler - DEBUG - last_name: 90.0% complete (9/10)
+2026-02-20 11:39:59,511 - src.profiler - DEBUG - email: 100.0% complete (10/10)
+2026-02-20 11:39:59,512 - src.profiler - DEBUG - phone: 100.0% complete (10/10)
+2026-02-20 11:39:59,512 - src.profiler - DEBUG - date_of_birth: 100.0% complete (10/10)
+2026-02-20 11:39:59,512 - src.profiler - DEBUG - address: 80.0% complete (8/10)
+2026-02-20 11:39:59,512 - src.profiler - DEBUG - income: 90.0% complete (9/10)
+2026-02-20 11:39:59,512 - src.profiler - DEBUG - account_status: 90.0% complete (9/10)
+2026-02-20 11:39:59,513 - src.profiler - DEBUG - created_date: 100.0% complete (10/10)
+2026-02-20 11:39:59,513 - src.profiler - DEBUG - customer_id: detected as INT
+2026-02-20 11:39:59,513 - src.profiler - DEBUG - first_name: detected as STRING
+2026-02-20 11:39:59,515 - src.profiler - DEBUG - last_name: detected as STRING
+2026-02-20 11:39:59,516 - src.profiler - DEBUG - email: detected as STRING
+2026-02-20 11:39:59,516 - src.profiler - DEBUG - phone: detected as STRING
+2026-02-20 11:39:59,517 - src.profiler - DEBUG - date_of_birth: detected as STRING (should be DATE)
+2026-02-20 11:39:59,517 - src.profiler - DEBUG - address: detected as STRING
+2026-02-20 11:39:59,518 - src.profiler - DEBUG - income: detected as STRING (should be NUMERIC)
+2026-02-20 11:39:59,518 - src.profiler - DEBUG - account_status: detected as STRING
+2026-02-20 11:39:59,518 - src.profiler - DEBUG - created_date: detected as STRING (should be DATE)
+2026-02-20 11:39:59,523 - src.profiler - INFO - Detected 3 phone format issues, 4 date format issues, 1 case issues
+2026-02-20 11:39:59,525 - src.profiler - WARNING - account_status: 6 duplicates found
+2026-02-20 11:39:59,528 - src.profiler - INFO - account_status: found {'inactive', 'suspended', 'active'}, invalid: 0
+2026-02-20 11:39:59,529 - src.profiler - INFO - Value ranges analyzed: {'customer_id': {'min': 1, 'max': 10, 'invalid': 0}, 'income': {'min': 55000.0, 'max': 120000.0, 'negative': 0, 'over_10m': 0}}
+2026-02-20 11:39:59,531 - src.profiler - INFO - Generated quality report with 8 issues
+2026-02-20 11:39:59,534 - src.profiler - INFO - Report saved to output\data_quality_report.txt
+2026-02-20 11:39:59,534 - src.pipeline - INFO - [2026-02-20T11:39:59.534035] PROFILE: OK quality report generated
+2026-02-20 11:39:59,534 - src.pipeline - INFO - DATA QUALITY PROFILE REPORT
+===========================
+
+Generated: 2026-02-20T11:39:59.530712
+Total Rows: 10
+Total Columns: 10
+
+COMPLETENESS:
+----------------------------------------
+  [OK] customer_id: 100.0% (10/10)
+  [OK] first_name: 90.0% (9/10)
+  [OK] last_name: 90.0% (9/10)
+  [OK] email: 100.0% (10/10)
+  [OK] phone: 100.0% (10/10)
+  [OK] date_of_birth: 100.0% (10/10)
+  [OK] address: 80.0% (8/10)
+  [OK] income: 90.0% (9/10)
+  [OK] account_status: 90.0% (9/10)
+  [OK] created_date: 100.0% (1...
+2026-02-20 11:39:59,535 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:39:59,535 - src.pipeline - INFO - STAGE 3: VALIDATE RAW
+2026-02-20 11:39:59,535 - src.pipeline - INFO - ============================================================
+2026-02-20 11:39:59,535 - src.validators - INFO - Initialized DataValidator with manual schemas
+2026-02-20 11:39:59,536 - src.validators - INFO - Running detailed validation (cleaned=False)...
+2026-02-20 11:39:59,536 - src.pipeline - INFO - [2026-02-20T11:39:59.536641] VALIDATE_RAW: FAILED 'DataValidator' object has no attribute 'raw_schema'
+2026-02-20 11:39:59,536 - src.pipeline - ERROR - Validation failed: 'DataValidator' object has no attribute 'raw_schema'
+2026-02-20 11:39:59,536 - __main__ - ERROR - Pipeline execution failed!
+2026-02-20 11:40:20,520 - root - INFO - Logging configured: logs\pipeline.log
+2026-02-20 11:40:20,520 - __main__ - INFO - Starting PII Detection & Data Quality Validation Pipeline
+2026-02-20 11:40:20,527 - root - INFO - Configuration loaded from config/config.yaml
+2026-02-20 11:40:20,527 - src.pipeline - INFO - Initialized pipeline: data/customers_raw.csv -> output
+2026-02-20 11:40:20,527 - src.pipeline - INFO - 
+
+
+2026-02-20 11:40:20,527 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,529 - src.pipeline - INFO - PII DETECTION & DATA QUALITY PIPELINE
+2026-02-20 11:40:20,529 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,529 - src.pipeline - INFO - Start Time: 2026-02-20T11:40:20.527422
+2026-02-20 11:40:20,529 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,530 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,530 - src.pipeline - INFO - STAGE 1: LOAD
+2026-02-20 11:40:20,530 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,535 - src.pipeline - INFO - [2026-02-20T11:40:20.535949] LOAD: [OK] SUCCESS (10 rows, 10 columns)
+2026-02-20 11:40:20,535 - src.pipeline - INFO - Columns: ['customer_id', 'first_name', 'last_name', 'email', 'phone', 'date_of_birth', 'address', 'income', 'account_status', 'created_date']
+2026-02-20 11:40:20,536 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:40:20,536 - src.pipeline - INFO - STAGE 2: PROFILE
+2026-02-20 11:40:20,536 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,536 - src.profiler - INFO - Initialized DataProfiler with data/customers_raw.csv
+2026-02-20 11:40:20,539 - src.profiler - DEBUG - customer_id: 100.0% complete (10/10)
+2026-02-20 11:40:20,539 - src.profiler - DEBUG - first_name: 90.0% complete (9/10)
+2026-02-20 11:40:20,540 - src.profiler - DEBUG - last_name: 90.0% complete (9/10)
+2026-02-20 11:40:20,541 - src.profiler - DEBUG - email: 100.0% complete (10/10)
+2026-02-20 11:40:20,541 - src.profiler - DEBUG - phone: 100.0% complete (10/10)
+2026-02-20 11:40:20,542 - src.profiler - DEBUG - date_of_birth: 100.0% complete (10/10)
+2026-02-20 11:40:20,542 - src.profiler - DEBUG - address: 80.0% complete (8/10)
+2026-02-20 11:40:20,544 - src.profiler - DEBUG - income: 90.0% complete (9/10)
+2026-02-20 11:40:20,544 - src.profiler - DEBUG - account_status: 90.0% complete (9/10)
+2026-02-20 11:40:20,545 - src.profiler - DEBUG - created_date: 100.0% complete (10/10)
+2026-02-20 11:40:20,545 - src.profiler - DEBUG - customer_id: detected as INT
+2026-02-20 11:40:20,546 - src.profiler - DEBUG - first_name: detected as STRING
+2026-02-20 11:40:20,546 - src.profiler - DEBUG - last_name: detected as STRING
+2026-02-20 11:40:20,546 - src.profiler - DEBUG - email: detected as STRING
+2026-02-20 11:40:20,547 - src.profiler - DEBUG - phone: detected as STRING
+2026-02-20 11:40:20,547 - src.profiler - DEBUG - date_of_birth: detected as STRING (should be DATE)
+2026-02-20 11:40:20,548 - src.profiler - DEBUG - address: detected as STRING
+2026-02-20 11:40:20,549 - src.profiler - DEBUG - income: detected as STRING (should be NUMERIC)
+2026-02-20 11:40:20,550 - src.profiler - DEBUG - account_status: detected as STRING
+2026-02-20 11:40:20,550 - src.profiler - DEBUG - created_date: detected as STRING (should be DATE)
+2026-02-20 11:40:20,555 - src.profiler - INFO - Detected 3 phone format issues, 4 date format issues, 1 case issues
+2026-02-20 11:40:20,559 - src.profiler - WARNING - account_status: 6 duplicates found
+2026-02-20 11:40:20,562 - src.profiler - INFO - account_status: found {'inactive', 'active', 'suspended'}, invalid: 0
+2026-02-20 11:40:20,564 - src.profiler - INFO - Value ranges analyzed: {'customer_id': {'min': 1, 'max': 10, 'invalid': 0}, 'income': {'min': 55000.0, 'max': 120000.0, 'negative': 0, 'over_10m': 0}}
+2026-02-20 11:40:20,568 - src.profiler - INFO - Generated quality report with 8 issues
+2026-02-20 11:40:20,569 - src.profiler - INFO - Report saved to output\data_quality_report.txt
+2026-02-20 11:40:20,570 - src.pipeline - INFO - [2026-02-20T11:40:20.570642] PROFILE: OK quality report generated
+2026-02-20 11:40:20,571 - src.pipeline - INFO - DATA QUALITY PROFILE REPORT
+===========================
+
+Generated: 2026-02-20T11:40:20.565742
+Total Rows: 10
+Total Columns: 10
+
+COMPLETENESS:
+----------------------------------------
+  [OK] customer_id: 100.0% (10/10)
+  [OK] first_name: 90.0% (9/10)
+  [OK] last_name: 90.0% (9/10)
+  [OK] email: 100.0% (10/10)
+  [OK] phone: 100.0% (10/10)
+  [OK] date_of_birth: 100.0% (10/10)
+  [OK] address: 80.0% (8/10)
+  [OK] income: 90.0% (9/10)
+  [OK] account_status: 90.0% (9/10)
+  [OK] created_date: 100.0% (1...
+2026-02-20 11:40:20,571 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:40:20,572 - src.pipeline - INFO - STAGE 3: VALIDATE RAW
+2026-02-20 11:40:20,572 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,572 - src.validators - INFO - Initialized DataValidator with manual schemas
+2026-02-20 11:40:20,572 - src.validators - INFO - Running detailed validation (cleaned=False)...
+2026-02-20 11:40:20,574 - src.pipeline - INFO - [2026-02-20T11:40:20.574784] VALIDATE_RAW: OK (10 passed, 0 issues)
+2026-02-20 11:40:20,575 - src.pipeline - INFO - Validation result: 10/10 rows passed
+2026-02-20 11:40:20,575 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:40:20,575 - src.pipeline - INFO - STAGE 4: CLEAN
+2026-02-20 11:40:20,577 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,577 - src.cleaner - INFO - Initialized DataCleaner
+2026-02-20 11:40:20,577 - src.cleaner - INFO - Starting data cleaning on 10 rows...
+2026-02-20 11:40:20,581 - src.cleaner - INFO - Normalized 3 phone numbers
+2026-02-20 11:40:20,589 - src.cleaner - INFO - Normalized 2 dates
+2026-02-20 11:40:20,594 - src.cleaner - INFO - Applied title case to 1 names
+2026-02-20 11:40:20,597 - src.cleaner - INFO - Normalized 1 income values
+2026-02-20 11:40:20,607 - src.cleaner - INFO - Cleaning complete: 10 rows remaining
+2026-02-20 11:40:20,608 - src.pipeline - INFO - [2026-02-20T11:40:20.608223] CLEAN: OK (10 rows)
+2026-02-20 11:40:20,608 - src.pipeline - INFO - Cleaning stats: {'rows_processed': 10, 'rows_dropped': 0, 'normalization_actions': {'phone_format': 3, 'date_format': 2, 'name_case': 1, 'income_numeric': 1, 'email_lowercase': 1, 'account_status': 1}, 'missing_value_actions': {}, 'rows_remaining': 10}
+2026-02-20 11:40:20,608 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:40:20,608 - src.pipeline - INFO - STAGE 5: VALIDATE CLEANED
+2026-02-20 11:40:20,609 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,609 - src.validators - INFO - Initialized DataValidator with manual schemas
+2026-02-20 11:40:20,609 - src.validators - INFO - Running detailed validation (cleaned=True)...
+2026-02-20 11:40:20,611 - src.pipeline - INFO - [2026-02-20T11:40:20.611753] VALIDATE_CLEAN: ISSUES (9 passed, 1 issues)
+2026-02-20 11:40:20,611 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:40:20,612 - src.pipeline - INFO - STAGE 6: DETECT PII
+2026-02-20 11:40:20,612 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,613 - src.validators - INFO - Initialized PIIDetector
+2026-02-20 11:40:20,613 - src.validators - INFO - Scanning for PII...
+2026-02-20 11:40:20,618 - src.validators - INFO - PII Detection Summary: 10 emails, 10 phones, 8 addresses, 9 DOBs, 10 high-risk rows
+2026-02-20 11:40:20,619 - src.pipeline - INFO - [2026-02-20T11:40:20.619232] DETECT_PII: OK (10 emails, 10 phones)
+2026-02-20 11:40:20,620 - src.pipeline - INFO - PII exposure: {'total_rows': 10, 'email_coverage': 100.0, 'phone_coverage': 100.0, 'address_coverage': 80.0, 'dob_coverage': 90.0, 'name_coverage': 100.0, 'risk_level': 'CRITICAL', 'high_risk_count': 10}
+2026-02-20 11:40:20,620 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:40:20,621 - src.pipeline - INFO - STAGE 7: MASK PII
+2026-02-20 11:40:20,621 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,621 - src.masker - INFO - Initialized PIIMasker
+2026-02-20 11:40:20,622 - src.masker - INFO - Masking PII in 10 rows...
+2026-02-20 11:40:20,625 - src.masker - INFO - PII masking complete
+2026-02-20 11:40:20,627 - src.pipeline - INFO - [2026-02-20T11:40:20.627056] MASK: OK (10 rows masked)
+2026-02-20 11:40:20,627 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:40:20,627 - src.pipeline - INFO - STAGE 8: SAVE OUTPUTS
+2026-02-20 11:40:20,627 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,631 - src.pipeline - INFO - Saved: output\customers_cleaned.csv
+2026-02-20 11:40:20,634 - src.pipeline - INFO - Saved: output\customers_masked.csv
+2026-02-20 11:40:20,636 - src.pipeline - INFO - Saved: output\validation_results.txt
+2026-02-20 11:40:20,637 - src.cleaner - INFO - Initialized DataCleaner
+2026-02-20 11:40:20,638 - src.pipeline - INFO - Saved: output\cleaning_log.txt
+2026-02-20 11:40:20,641 - src.pipeline - INFO - Saved: output\pii_detection_report.txt
+2026-02-20 11:40:20,642 - src.pipeline - INFO - Saved: output\masked_sample.txt
+2026-02-20 11:40:20,643 - src.pipeline - INFO - Verified: data_quality_report.txt
+2026-02-20 11:40:20,643 - src.pipeline - INFO - [2026-02-20T11:40:20.643747] SAVE: OK (all outputs saved)
+2026-02-20 11:40:20,644 - src.pipeline - INFO - Saved: output\pipeline_execution_report.txt
+2026-02-20 11:40:20,645 - src.pipeline - INFO - 
+============================================================
+2026-02-20 11:40:20,645 - src.pipeline - INFO - PIPELINE EXECUTION COMPLETE
+2026-02-20 11:40:20,646 - src.pipeline - INFO - ============================================================
+2026-02-20 11:40:20,646 - src.pipeline - INFO - Start: 2026-02-20T11:40:20.527422
+2026-02-20 11:40:20,646 - src.pipeline - INFO - End: 2026-02-20T11:40:20.645400
+2026-02-20 11:40:20,646 - src.pipeline - INFO - Duration: 0.12 seconds
+2026-02-20 11:40:20,646 - src.pipeline - INFO - Status: SUCCESS
+2026-02-20 11:40:20,647 - src.pipeline - INFO - ============================================================
+
+2026-02-20 11:40:20,647 - __main__ - INFO - Pipeline execution completed successfully!
+2026-02-20 11:40:20,647 - __main__ - INFO - Output files saved to: output

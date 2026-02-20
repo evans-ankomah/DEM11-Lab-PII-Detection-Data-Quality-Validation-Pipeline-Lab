@@ -1,0 +1,19 @@
+VALIDATION RESULTS
+==================
+
+RAW DATA VALIDATION:
+----------------------------------------
+Total rows: 10
+Passed: 10
+Failed: 0
+Pass rate: 100.0%
+
+CLEANED DATA VALIDATION:
+----------------------------------------
+Total rows: 10
+Passed: 9
+Failed: 1
+Pass rate: 90.0%
+
+Issues remaining after cleaning:
+  Row 5: Invalid account_status: unknown
